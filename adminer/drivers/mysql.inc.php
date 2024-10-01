@@ -1095,7 +1095,7 @@ if (!defined("DRIVER")) {
 		if (preg_match("~binary~", $field["type"] ?? null)) {
 			$return = "UNHEX($return)";
 		}
-		if ($field["type"] ?? null == "bit") {
+		if (($field["type"] ?? null) == "bit") {
 			$return = "CONV($return, 2, 10) + 0";
 		}
 		if (preg_match("~geometry|point|linestring|polygon~", $field["type"] ?? null)) {

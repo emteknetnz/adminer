@@ -336,7 +336,7 @@ if (!$columns && support("table")) {
 						echo apply_sql_function($val["fun"] ?? null, $name) . "</a>"; //! columns looking like functions
 						echo "<span class='column hidden'>";
 						echo "<a href='" . h($href . $desc) . "' title='" . lang('descending') . "' class='text'> ↓</a>";
-						if (!$val["fun"]) {
+						if (!($val["fun"] ?? null)) {
 							echo '<a href="#fieldset-search" title="' . lang('Search') . '" class="text jsonly"> =</a>';
 							echo script("qsl('a').onclick = partial(selectSearch, '" . js_escape($key) . "');");
 						}
