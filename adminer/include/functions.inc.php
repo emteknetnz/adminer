@@ -487,7 +487,7 @@ function where($where, $fields = array()) {
 				: " = " . unconvert_field($fields[$key], q($val))
 			))
 		; //! enum and set
-		if ($jush == "sql" && preg_match('~char|text~', $fields[$key]["type"]) && preg_match("~[^ -@]~", $val)) { // not just [a-z] to catch non-ASCII characters
+		if ($jush == "sql" && preg_match('~char|text~', $fields[$key]["type"] ?? null) && preg_match("~[^ -@]~", $val)) { // not just [a-z] to catch non-ASCII characters
 			$return[] = "$column = " . q($val) . " COLLATE " . charset($connection) . "_bin";
 		}
 	}
