@@ -1437,7 +1437,7 @@ function edit_form($table, $fields, $row, $update) {
 
 		foreach ($fields as $name => $field) {
 			echo "<tr><th>" . $adminer->fieldName($field);
-			$default = $_GET["set"][bracket_escape($name)];
+			$default = $_GET["set"][bracket_escape($name)] ?? null;
 			if ($default === null) {
 				$default = $field["default"];
 				if ($field["type"] == "bit" && preg_match("~^b'([01]*)'\$~", $default, $regs)) {
