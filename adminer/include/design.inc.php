@@ -30,7 +30,7 @@ function page_header($title, $error = "", $breadcrumb = array(), $title2 = "") {
 <?php foreach ($adminer->css() as $css) { ?>
 <link rel="stylesheet" type="text/css" href="<?php echo h($css); ?>">
 <?php } ?>
-<link rel="stylesheet" type="text/css" href="/adminer/hydra.css">
+<link rel="stylesheet" type="text/css" href="/adminer/esterka.css">
 <?php } ?>
 
 <body class="<?php echo lang('ltr'); ?> nojs">
